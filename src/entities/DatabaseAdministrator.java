@@ -17,6 +17,15 @@ public class DatabaseAdministrator extends Developer {
         this.bonus = this.scanner.nextInt();
     }
 
+    @Override
+    public void output() {
+        System.out.println("Staff Info: ");
+        System.out.println("Role: DBA");
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + this.getSalary());
+        System.out.println("Bonus: " + bonus);
+    }
+
     public int getBonus() {
         return bonus;
     }
@@ -24,16 +33,5 @@ public class DatabaseAdministrator extends Developer {
     @Override
     public int getSalary() {
         return this.salary + bonus;
-    }
-
-    @Override
-    public String toString() {
-        return "DatabaseAdministrator{" +
-                "bonus=" + bonus +
-                ", id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                ", scanner=" + scanner +
-                '}';
     }
 }

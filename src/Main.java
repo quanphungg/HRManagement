@@ -1,7 +1,4 @@
-import entities.BusinessAnalyst;
-import entities.Fresher;
-import entities.Senior;
-import entities.Staff;
+import entities.*;
 
 import java.util.Scanner;
 
@@ -24,11 +21,20 @@ public class Main {
                     staff = new BusinessAnalyst();
                     staff.input();
                     break;
+                case 3:
+                    staff = new DatabaseAdministrator();
+                    staff.input();
+                    break;
                 case 4:
                     staff = new Senior();
                     staff.input();
+                    break;
                 case 6:
-                    if (staff != null) staff.output();
+                    if (staff != null) {
+                        System.out.println();
+                        staff.output();
+                        System.out.println();
+                    }
                     break;
                 case 7:
                     System.out.println("Bye bye!");

@@ -1,17 +1,22 @@
 package entities;
 
-public class Senior extends Developer{
+public class Senior extends Developer {
 
     private int yearOfExperience;
-
-    public Senior() {
-        super();
-    }
 
     @Override
     public void input() {
         System.out.println("Year of experience");
         yearOfExperience = Integer.parseInt(scanner.nextLine());
+    }
+
+    @Override
+    public void output() {
+        System.out.println("Staff Info: ");
+        System.out.println("Role: Senior");
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + this.getSalary());
+        System.out.println("Experience: " + yearOfExperience);
     }
 
     public int getYearOfExperience() {
@@ -21,14 +26,5 @@ public class Senior extends Developer{
     @Override
     public int getSalary() {
         return (int) (salary * 1.5 * yearOfExperience);
-    }
-
-    @Override
-    public String toString() {
-        return "Senior{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
     }
 }

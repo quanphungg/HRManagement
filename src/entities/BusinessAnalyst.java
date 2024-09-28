@@ -17,6 +17,15 @@ public class BusinessAnalyst extends Staff {
     }
 
     @Override
+    public void output() {
+        System.out.println("Staff Info: ");
+        System.out.println("Role: BA");
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + this.getSalary());
+        System.out.println("Domain: " + domain);
+    }
+
+    @Override
     public int getSalary() {
         double bonus = 0;
 
@@ -29,15 +38,5 @@ public class BusinessAnalyst extends Staff {
         }
 
         return (int) (salary + (bonus * salary));
-    }
-
-    @Override
-    public String toString() {
-        return "BusinessAnalyst{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", salary=" + getSalary() +
-                ", domain='" + domain + '\'' +
-                '}';
     }
 }

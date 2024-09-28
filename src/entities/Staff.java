@@ -3,7 +3,7 @@ package entities;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class Staff {
+public abstract class Staff {
 
     protected String id;
     protected String name;
@@ -55,11 +55,7 @@ public class Staff {
         this.salary = Integer.parseInt(scanner.nextLine());
     }
 
-    public void output() {
-        System.out.println();
-        System.out.println(this.toString());
-        System.out.println();
-    }
+    public abstract void output();
 
     @Override
     public String toString() {
@@ -67,6 +63,7 @@ public class Staff {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
+                ", real_salary='" + getSalary() + '\'' +
                 '}';
     }
 }
